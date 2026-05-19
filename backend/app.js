@@ -13,7 +13,12 @@ dotenv.config({
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser)
-app.use(cors())
+app.use(cors({
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+    origin: process.env.FRONTEND
+}))
+
 
 app.use(errorMiddleware)
 export default app

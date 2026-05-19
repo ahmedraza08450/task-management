@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const connectDB = async () => {
     try {
-        const connectionInstance = await mongoose.connect("", {
+        const connectionInstance = await mongoose.connect(process.env.MONDODB_URI, {
             dbName: "Task-Management"
         })
         console.log("CONNECTED TO DATABASE " + connectionInstance.connection.host);
