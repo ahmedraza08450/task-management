@@ -3,6 +3,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors'
 import { errorMiddleware } from './src/middlewares/errorMiddleware.js'
+import userRoute from './src/routes/user.route.js'
 
 const app = express()
 dotenv.config({
@@ -18,6 +19,9 @@ app.use(cors({
     credentials: true,
     origin: process.env.FRONTEND
 }))
+
+app.use("/api/v1/user", userRoute)
+
 app.get("/", (req, res) => {
     res.send("<h1>SERVER IS LISTENING</h1>")
 })
