@@ -12,13 +12,15 @@ dotenv.config({
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.use(cookieParser)
+app.use(cookieParser())
 app.use(cors({
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
     origin: process.env.FRONTEND
 }))
-
+app.get("/", (req, res) => {
+    res.send("<h1>SERVER IS LISTENING</h1>")
+})
 
 app.use(errorMiddleware)
 export default app
