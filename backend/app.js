@@ -4,6 +4,7 @@ import dotenv from 'dotenv'
 import cors from 'cors'
 import { errorMiddleware } from './src/middlewares/errorMiddleware.js'
 import userRoute from './src/routes/user.route.js'
+import taskRoute from './src/routes/task.route.js'
 
 const app = express()
 dotenv.config({
@@ -21,6 +22,7 @@ app.use(cors({
 }))
 
 app.use("/api/v1/user", userRoute)
+app.use("/api/v1/task", taskRoute)
 
 app.get("/", (req, res) => {
     res.send("<h1>SERVER IS LISTENING</h1>")
