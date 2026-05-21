@@ -5,6 +5,9 @@ import cors from 'cors'
 import { errorMiddleware } from './src/middlewares/errorMiddleware.js'
 import userRoute from './src/routes/user.route.js'
 import taskRoute from './src/routes/task.route.js'
+import dns from 'dns'
+
+dns.setServers(["1.1.1.1"])
 
 const app = express()
 dotenv.config({
