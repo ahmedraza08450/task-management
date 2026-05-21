@@ -6,6 +6,7 @@ import { errorMiddleware } from './src/middlewares/errorMiddleware.js'
 import userRoute from './src/routes/user.route.js'
 import taskRoute from './src/routes/task.route.js'
 import dns from 'dns'
+import connectDB from './src/database/dbConnection.js'
 
 dns.setServers(["1.1.1.1"])
 
@@ -26,6 +27,7 @@ app.use(cors({
 
 app.use("/api/v1/user", userRoute)
 app.use("/api/v1/task", taskRoute)
+connectDB()
 
 app.get("/", (req, res) => {
     res.send("<h1>SERVER IS LISTENING</h1>")

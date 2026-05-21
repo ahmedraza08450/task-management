@@ -22,7 +22,6 @@ function Header({ task, setTask, isUserAuthenticated, setIsUserAuthenticated }) 
       setTask(res.data.task)
     } catch (error) {
       console.log(error);
-      console.log("Error while fetching tasks");
     }
   }
 
