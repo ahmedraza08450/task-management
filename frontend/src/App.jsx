@@ -15,7 +15,7 @@ const App = () => {
   useEffect(() => {
     const handleGetUser = async () => {
       try {
-        const res = await axios.get("http://localhost:8000/api/v1/user/getUserDetails", { withCredentials: true, })
+        const res = await axios.get("https://task-management-dv04ijfoz-ahmedraza08450s-projects.vercel.app/api/v1/user/getUserDetails", { withCredentials: true, })
         setIsUserAuthenticated(true)
         setUser(res.data)
       } catch (error) {

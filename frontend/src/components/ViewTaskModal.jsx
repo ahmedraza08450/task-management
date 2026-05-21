@@ -11,7 +11,7 @@ const ViewTaskModal = ({ showViewModal, handleViewModalClose, id }) => {
   useEffect(() => {
     const getSingleTask = async () => {
       try {
-        const res = await axios.get(`http://localhost:8000/api/v1/task/getSingleTask/${id}`, { withCredentials: true })
+        const res = await axios.get(`https://task-management-dv04ijfoz-ahmedraza08450s-projects.vercel.app/api/v1/task/getSingleTask/${id}`, { withCredentials: true })
         setTask(res.data.task)
       } catch (error) {
         toast.error(error.response.data.message)

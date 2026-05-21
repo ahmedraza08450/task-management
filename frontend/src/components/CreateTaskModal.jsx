@@ -11,7 +11,7 @@ const CreateTaskModal = ({ handleCreateModalClose, showCreateModal, setTask }) =
 
     const handleCreateTask = async () => {
         try {
-            const res = await axios.post(`http://localhost:8000/api/v1/task/createTask`, {
+            const res = await axios.post(`https://task-management-dv04ijfoz-ahmedraza08450s-projects.vercel.app/api/v1/task/createTask`, {
                 title,
                 description,
             }, {
