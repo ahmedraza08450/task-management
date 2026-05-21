@@ -5,7 +5,7 @@ const taskSchema = new mongoose.Schema(
         title: {
             type: String
         },
-        decription: {
+        description: {
             type: String
         },
         status: {

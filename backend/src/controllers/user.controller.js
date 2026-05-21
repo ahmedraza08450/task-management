@@ -26,10 +26,8 @@ const register = asyncHandler(async (req, res, next) => {
         email,
         password
     })
-    return res.status(201).json({
-        success: true,
-        message: "User registered successfully!"
-    })
+    generateToken(user, "User registered successfully!", 200, res)
+
 })
 
 const login = asyncHandler(async (req, res, next) => {

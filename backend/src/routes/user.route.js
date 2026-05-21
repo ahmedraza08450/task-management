@@ -6,7 +6,7 @@ const userRoute = express.Router()
 
 userRoute.post("/register", register)
 userRoute.post("/login", login)
-userRoute.post("/logout", isUserAuthenticated, logout)
+userRoute.get("/logout", isUserAuthenticated, logout)
 userRoute.get("/getUserDetails", isUserAuthenticated, getUserDetails)
 
 export default userRoute

@@ -15,7 +15,8 @@ const createTask = asyncHandler(async (req, res, next) => {
     })
     return res.status(201).json({
         success: true,
-        message: "Task Created!"
+        message: "Task Created!",
+        task
     })
 })
 
