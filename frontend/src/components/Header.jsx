@@ -17,7 +17,7 @@ function Header({ task, setTask, isUserAuthenticated, setIsUserAuthenticated }) 
   }, [isUserAuthenticated])
   const fetchTasks = async () => {
     try {
-      const res = await axios.get("https://task-management-dv04ijfoz-ahmedraza08450s-projects.vercel.app/api/v1/task/getMyTasks", { withCredentials: true })
+      const res = await axios.get("http://localhost:8000/api/v1/task/getMyTasks", { withCredentials: true })
       setAllTask(res.data.task)
       setTask(res.data.task)
     } catch (error) {
@@ -27,7 +27,7 @@ function Header({ task, setTask, isUserAuthenticated, setIsUserAuthenticated }) 
 
   const handleLogout = async () => {
     try {
-      const res = await axios.get("https://task-management-dv04ijfoz-ahmedraza08450s-projects.vercel.app/api/v1/user/logout", { withCredentials: true })
+      const res = await axios.get("http://localhost:8000/api/v1/user/logout", { withCredentials: true })
       toast.success(res.data.message)
       setIsUserAuthenticated(false)
       navigateTo("/login")

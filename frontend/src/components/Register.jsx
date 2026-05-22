@@ -20,7 +20,7 @@ const Register = ({ isUserAuthenticated, setIsUserAuthenticated }) => {
     try {
 
       const res = await axios.post(
-        "https://task-management-dv04ijfoz-ahmedraza08450s-projects.vercel.app/api/v1/user/register",
+        "http://localhost:8000/api/v1/user/register",
         {
           firstName,
           lastName,

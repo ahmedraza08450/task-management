@@ -14,7 +14,7 @@ const UpdateTaskModal = ({ showUpdateModal, handleUpdateModalClose, id, setTask 
   useEffect(() => {
     const getSingleTask = async () => {
       try {
-        const res = await axios.get(`https://task-management-dv04ijfoz-ahmedraza08450s-projects.vercel.app/api/v1/task/getSingleTask/${id}`, { withCredentials: true })
+        const res = await axios.get(`http://localhost:8000/api/v1/task/getSingleTask/${id}`, { withCredentials: true })
         setTitle(res.data.task.title)
         setDescription(res.data.task.description)
         setStatus(res.data.task.status)
@@ -31,7 +31,7 @@ const UpdateTaskModal = ({ showUpdateModal, handleUpdateModalClose, id, setTask 
 
   const handleUpdate = async () => {
     try {
-      const res = await axios.put(`https://task-management-dv04ijfoz-ahmedraza08450s-projects.vercel.app/api/v1/task/updateTask/${id}`, {
+      const res = await axios.put(`http://localhost:8000/api/v1/task/updateTask/${id}`, {
         title,
         description,
         status,
